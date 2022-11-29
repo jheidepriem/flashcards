@@ -4,44 +4,44 @@ const expect = chai.expect;
 const Turn = require('../src/Turn.js');
 const Card = require('../src/Card.js');
 
-describe('Turn', function() {
+describe('Turn', () => {
 
   let card;
   let turn;
-  this.beforeEach(function() {
+  beforeEach(() => {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     turn = new Turn('pug', card);
   });
 
-  it('should be a function', function(){
+  it('should be a function', () => {
+    expect(Turn).to.be.a('function');
+  })
+
+  it('should be an instance of Turn', () => {
     expect(turn).to.be.an.instanceof(Turn);
   })
 
-  it('should be an instance of Card', function() {
-    expect(turn).to.be.an.instanceof(Turn);
-  })
-
-  it('should have a player\'s guess', function() {
+  it('should have a player\'s guess', () => {
     expect(turn.userGuess).to.equal('pug');
   })
 
-  it('should have player\'s current card in play', function() {
+  it('should have player\'s current card in play', () => {
     expect(turn.card).to.be.an.instanceof(Card);
   })
 
-  it('should return player\'s guess', function() {
+  it('should return player\'s guess', () => {
     expect(turn.returnGuess()).to.equal('pug');
   })
 
-  it('should return player\'s card', function() {
+  it('should return player\'s card', () => {
     expect(turn.returnCard()).to.be.an.instanceof(Card)
   })
 
-  it('should evaluate player\'s guess', function() {
+  it('should evaluate player\'s guess', () => {
     expect(turn.evaluateGuess()).to.equal(false);
   });
 
-  it('should tell the user whether they\'re answer is correct or incorrect', function() {
+  it('should tell the user whether they\'re answer is correct or incorrect', () => {
     expect(turn.giveFeedback()).to.equal('incorrect!')
   });
 })
