@@ -13,29 +13,35 @@ describe('Turn', function() {
     turn = new Turn('pug', card);
   });
 
-  it.skip('should be a function', function(){
+  it('should be a function', function(){
     expect(turn).to.be.an.instanceof(Turn);
   })
 
-  it.skip('should be an instance of Card', function() {
+  it('should be an instance of Card', function() {
     expect(turn).to.be.an.instanceof(Turn);
   })
 
-  it.skip('should have a player guess', function() {
-    expect(turn.guess).to.equal('pug');
+  it('should have a player\'s guess', function() {
+    expect(turn.userGuess).to.equal('pug');
   })
 
-  it.skip('should have player\'s current card in play', function() {
-    expect(this.card).to.be.an.instanceof(Card);
+  it('should have player\'s current card in play', function() {
+    expect(turn.card).to.be.an.instanceof(Card);
   })
 
-  it.skip('should return player\'s guess', function() {
-    turn.returnGuess()
-    expect(turn.returnGuess).to.deep.equal('pug');
+  it('should return player\'s guess', function() {
+    expect(turn.returnGuess()).to.equal('pug');
   })
 
-  it.skip('should return player\'s card', function() {
-    turn.returnCard()
-    expect(turn.returnCard).to.be.an.instanceof(Card)
+  it('should return player\'s card', function() {
+    expect(turn.returnCard()).to.be.an.instanceof(Card)
   })
+
+  it('should evaluate player\'s guess', function() {
+    expect(turn.evaluateGuess()).to.equal(false);
+  });
+
+  it('should tell the user whether they\'re answer is correct or incorrect', function() {
+    expect(turn.giveFeedback()).to.equal('incorrect!')
+  });
 })
