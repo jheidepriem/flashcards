@@ -15,20 +15,29 @@ class Round {
   takeTurn(userGuess) {
     let turn = new Turn(userGuess, this.returnCurrentCard())
     this.turns++
-    turn.evaluateGuess()
-      if(turn.giveFeedback() === 'incorrect') {
+      if(!turn.evaluateGuess()) {
         this.incorrectGuesses.push(this.returnCurrentCard().id)
-    }
-    return turn.evaluateGuess();
+       }
+       return turn.giveFeedback()
   }
 
   calculatePercentCorrect() {
-    
+    let math = this.incorrectGuesses.length / this.turns;
+    if (math === 0) {
+      let percentage = 100;
+      return percentage;
+    } else {
+      let percentage = math * 100;
+      return percentage;
+      }
+    }
+
+    endRound() {
+      return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
+    }
   }
 
-  endRound() {
+ 
 
-  }
-}
 
 module.exports = Round;
