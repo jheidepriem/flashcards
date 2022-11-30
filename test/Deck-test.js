@@ -23,6 +23,10 @@ describe('Deck', () => {
     expect(deck).to.be.an.instanceof(Deck);
   })
 
+  it('should store the cards in the deck', () => {
+    expect(deck.cards).to.deep.equal([card1, card2, card3]);
+  })
+
   it('should be able to count cards in the deck', () => {
     expect(deck.countCards()).to.equal(3);
   })
