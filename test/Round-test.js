@@ -45,5 +45,43 @@ describe('Round', () => {
     expect(round.returnCurrentCard()).to.be.an.instanceof(Card);
   })
 
-  it('should')
+  it('should add to turns when turn is taken', () => {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    expect(round.turns).to.equal(2);
+  })
+
+  it('should evaluate if the guess was correct', () => {
+    expect(round.takeTurn('sea otter')).to.equal('correct!')
+   })
+   
+   it('should evaluate if the guess was incorrect', () => {
+    expect(round.takeTurn('spleen')).to.equal('incorrect!')
+   })
+
+   it('should check to make sure user id was added to incorrect guesses array', () => {
+    round.takeTurn('spleen');
+    expect(round.incorrectGuesses).to.deep.equal([14]);
+   })
+
+   it('should check to make sure user id for the correct answer was not added to incorrect guesses array', () => {
+    round.takeTurn('sea otter');
+    expect(round.incorrectGuesses).to.deep.equal([])
+   })
+
+   it('should calculate the percentage of correct answers', () => {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    round.calculatePercentCorrect();
+    expect(round.calculatePercentCorrect()).to.deep.equal(50);
+  })
+
+    it('should print message when game is over', () => {
+      round.takeTurn('sea otter');
+      round.takeTurn('spleen');
+      round.calculatePercentCorrect();
+      round.endRound();
+      expect(round.endRound()).to.equal('** Round over! ** You answered 50% of the questions correctly!')
+    })
+
 })
