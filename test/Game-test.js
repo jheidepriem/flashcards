@@ -17,7 +17,18 @@ beforeEach(function() {
   card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
   deck = new Deck(cards);
   round = new Round(deck);
-  game = new Game(round)
+  game = new Game(round);
+})
+
+it('should be a function', () => {
+  expect(Game).to.be.a('function')
+})
+
+it('should be an instance of Game', () => {
+  expect(game).to.be.an.instanceof(Game);
+})
+
+it('should have a method to start the game', () => {
 
   })
 })
