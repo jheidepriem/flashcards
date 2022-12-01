@@ -35,6 +35,7 @@ Your project is running...
 
 *Note that you will not need to run your server until you are instantiating your `Game` class in Iteration 3. Prior to that, you should be using TDD to drive your code. You should check the functionality of your application by running your tests via `npm test`.*
 
-## Setup
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/108428451/205164883-e8b18d1f-9afa-4ba3-833c-27361e98efec.gif)
+
 
 
