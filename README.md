@@ -3,15 +3,15 @@
 # Abstract 
 If you've ever wanted to learn how to build and play a game from your command line, now's your chance! The user will be able to see questions, take guesses, and see a final score at the end of a round. 
 
-clear## Fork This Repo
-
-On the top right corner of this page, click the **Fork** button.
-
 # Technologies Used
 
 JavaScript, Mocha, Chai
 
 ## Setup
+
+## Fork This Repo
+
+On the top right corner of this page, click the **Fork** button.
 
 Clone down the forked repo (from your GitHub). Since you don't want to name your project "flashcards-starter", you can use an optional argument when you run `git clone` (you replace the `[...]` with the terminal command arguments):
 
