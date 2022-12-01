@@ -87,8 +87,7 @@ describe("Round", () => {
   it("should calculate the percentage of correct answers", () => {
     round.takeTurn("sea otter");
     round.takeTurn("spleen");
-    round.calculatePercentCorrect();
-    expect(round.calculatePercentCorrect()).to.deep.equal(50);
+    expect(round.calculatePercentCorrect()).to.deep.equal('50');
   });
 
   it("should print message when game is over", () => {
