@@ -21,18 +21,14 @@ class Round {
   }
 
   calculatePercentCorrect() {
-    let math = this.incorrectGuesses.length / this.turns;
-    if (math === 0) {
-      let percentage = 100;
-      return percentage;
-    } else {
-      let percentage = math * 100;
-      return percentage;
+    let correctGuesses = this.turns - this.incorrectGuesses.length
+      return `${correctGuesses / this.turns * 100}`
     }
-  }
+  
 
   endRound() {
-    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
   }
 }
 
